@@ -12,10 +12,7 @@ const Recipes = () => {
   useEffect(() => {
     const getRecipes = async () => {
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?query=${recipeInfo.recipeInfo.name}&cuisine=${recipeInfo.recipeInfo.cuisine}&maxReadyTime=${recipeInfo.recipeInfo.timeOfPreparation}&apiKey=${process.env.SPOONACULAR_API_KEY}`,
-        {
-          cache: '',
-        }
+        `https://api.spoonacular.com/recipes/complexSearch?query=${recipeInfo.recipeInfo.name}&cuisine=${recipeInfo.recipeInfo.cuisine}&maxReadyTime=${recipeInfo.recipeInfo.timeOfPreparation}&apiKey=${process.env.SPOONACULAR_API_KEY}`
       );
       const data = await response.json();
       setRecipeList(await data.results);
